@@ -1,0 +1,14 @@
+{
+  "alerts": [
+    {"asset_id":"P-001","actual_failure":true,"predicted_alert":true,"alert_time":"2026-01-08T08:00:00Z","failure_time":"2026-01-10T08:00:00Z"},
+    {"asset_id":"P-002","actual_failure":true,"predicted_alert":true,"alert_time":"2026-01-14T12:00:00Z","failure_time":"2026-01-15T00:00:00Z"},
+    {"asset_id":"P-003","actual_failure":true,"predicted_alert":false,"alert_time":null,"failure_time":"2026-01-20T06:00:00Z"},
+    {"asset_id":"P-004","actual_failure":false,"predicted_alert":true,"alert_time":"2026-01-11T05:00:00Z","failure_time":null},
+    {"asset_id":"P-005","actual_failure":false,"predicted_alert":false,"alert_time":null,"failure_time":null},
+    {"asset_id":"P-006","actual_failure":false,"predicted_alert":false,"alert_time":null,"failure_time":null}
+  ],
+  "drift": {
+    "temperature_c": {"reference":[68,69,70,70,71,71,72,72,73,74],"current":[70,71,72,73,74,75,76,77,78,79]},
+    "vibration_mm_s": {"reference":[1.8,1.9,2.0,2.0,2.1,2.1,2.2,2.2,2.3,2.4],"current":[1.9,2.0,2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.8]}
+  }
+}
