@@ -5,6 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     data_path: str = "../data/sample_sensor_data.csv"
     cors_origins: str = "http://localhost:3000"
+    cors_origin_regex: str = r"https://.*\.vercel\.app"
     anomaly_contamination: float = 0.15
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
