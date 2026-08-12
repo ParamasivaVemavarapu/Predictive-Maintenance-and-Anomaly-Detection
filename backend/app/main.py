@@ -8,7 +8,13 @@ from .store import SensorStore
 
 settings = get_settings()
 app = FastAPI(title="Predictive Maintenance API", version="1.0.0")
-app.add_middleware(CORSMiddleware, allow_origins=settings.allowed_origins, allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.allowed_origins,
+    allow_origin_regex=settings.cors_origin_regex,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @lru_cache
