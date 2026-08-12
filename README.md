@@ -122,6 +122,7 @@ flowchart TD
 The platform automates the complete **validate → engineer features → detect anomalies → score risk → estimate RUL → prioritize maintenance** workflow and exposes its results through FastAPI and a Next.js dashboard. The backend and frontend are deployed through Render and Vercel.
 
 The included values validate the backtesting and monitoring implementation on synthetic data. They are not field failure rates, avoided downtime, maintenance-cost savings, or manufacturer-certified predictions.
+
 ## Cloud Deployment
 
 The FastAPI analytics service is deployed as a Docker container on Render with automatic deployment from GitHub, dynamic port configuration, a public health endpoint, and interactive OpenAPI documentation.
