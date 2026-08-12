@@ -1,5 +1,9 @@
 # Predictive Maintenance and Anomaly Detection
 
+![Representative product preview](docs/product-preview.svg)
+
+> Representative preview generated from the implemented frontend layout and verified API response fields.
+
 A full-stack industrial analytics application that converts equipment sensor readings into anomaly alerts, explainable failure-risk scores, health trends, and maintenance recommendations.
 
 ## Product Walkthrough
