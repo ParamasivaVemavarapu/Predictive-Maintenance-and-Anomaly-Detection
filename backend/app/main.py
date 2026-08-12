@@ -16,6 +16,18 @@ def store() -> SensorStore:
     return SensorStore(settings.data_path, settings.anomaly_contamination)
 
 
+@app.get("/")
+def root() -> dict:
+    return {
+        "service": "Predictive Maintenance API",
+        "version": app.version,
+        "status": "live",
+        "health": "/health",
+        "documentation": "/docs",
+        "overview": "/api/overview",
+    }
+
+
 @app.get("/health")
 def health() -> dict:
     return {"status": "ok"}
