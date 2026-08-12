@@ -9,6 +9,24 @@ A full-stack industrial analytics application that converts equipment sensor rea
 **Live application:** [Open dashboard](https://predictive-maintenance-and-anomaly-detection-paramasiva.vercel.app)  
 **Live API:** [Service](https://predictive-maintenance-and-anomaly-chld.onrender.com) · [API documentation](https://predictive-maintenance-and-anomaly-chld.onrender.com/docs) · [Health check](https://predictive-maintenance-and-anomaly-chld.onrender.com/health)
 
+## Project Case Study
+
+### Problem
+
+Reactive maintenance can cause unplanned downtime, while fixed schedules can service healthy equipment unnecessarily. Maintenance teams need early, explainable signals that identify abnormal behavior and prioritize the assets that need attention.
+
+### What I Built
+
+I built a deployed industrial-analytics platform that validates sensor data, engineers operating features, detects multivariate anomalies with Isolation Forest, calculates explainable risk and health scores, estimates remaining useful life, and recommends maintenance priority through fleet and asset dashboards.
+
+### Tech Used
+
+Python, pandas, NumPy, and scikit-learn for analytics; FastAPI for fleet and asset APIs; Next.js and TypeScript for monitoring; Docker for the backend; Render and Vercel for cloud deployment; pytest, Ruff, GitHub Actions, and PSI monitoring for quality and drift detection.
+
+### Outcome
+
+The platform automates **validate → engineer features → detect anomalies → score risk → estimate RUL → prioritize maintenance**. On a six-outcome synthetic backtest, it records **0.667 alert precision**, **0.667 recall**, and **30 hours mean true-positive alert lead time**, with PSI monitoring across temperature and vibration. These results demonstrate the evaluation pipeline, not field savings or certified predictive performance.
+
 ## Product Walkthrough
 
 ```mermaid
