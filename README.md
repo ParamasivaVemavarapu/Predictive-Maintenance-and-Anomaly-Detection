@@ -157,6 +157,10 @@ pressure_bar, rpm, operating_hours
 
 Isolation Forest identifies uncommon multivariate states without requiring failure labels. The explainable risk layer then converts normalized sensor stress, equipment age, and anomaly severity into operational decision support. Risk and RUL estimates are not manufacturer-certified predictions.
 
+## Engineering Quality
+
+This repository includes modular Python services, typed API contracts, environment-based configuration, automated tests with coverage, Ruff linting, TypeScript checks, reproducible Docker builds, and GitHub Actions CI. See [Engineering Quality](docs/ENGINEERING.md) for the quality gates and production-readiness boundary.
+
 ## Production Roadmap
 
 - Add screenshots and a hosted demonstration
