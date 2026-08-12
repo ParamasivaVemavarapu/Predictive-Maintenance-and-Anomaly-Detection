@@ -6,6 +6,8 @@
 
 A full-stack industrial analytics application that converts equipment sensor readings into anomaly alerts, explainable failure-risk scores, health trends, and maintenance recommendations.
 
+**Live cloud API:** [Open service](https://predictive-maintenance-and-anomaly-chld.onrender.com) · [Interactive documentation](https://predictive-maintenance-and-anomaly-chld.onrender.com/docs) · [Health check](https://predictive-maintenance-and-anomaly-chld.onrender.com/health)
+
 ## Product Walkthrough
 
 ```mermaid
@@ -109,12 +111,23 @@ flowchart TD
 
 The application produces a complete assessment for every asset: anomaly state, explainable 0–100 risk score, estimated RUL, priority, and recommended action. The included dataset is synthetic, so the outputs demonstrate the engineering workflow rather than certified predictive performance. Precision, recall, alert lead time, and avoided-downtime metrics require labeled maintenance history and are not fabricated here.
 
+## Cloud Deployment
+
+The FastAPI analytics service is deployed as a Docker container on Render with automatic deployment from GitHub, dynamic port configuration, a public health endpoint, and interactive OpenAPI documentation.
+
+- **Service:** https://predictive-maintenance-and-anomaly-chld.onrender.com
+- **API documentation:** https://predictive-maintenance-and-anomaly-chld.onrender.com/docs
+- **Health check:** https://predictive-maintenance-and-anomaly-chld.onrender.com/health
+- **Fleet overview:** https://predictive-maintenance-and-anomaly-chld.onrender.com/api/overview
+
+The Next.js dashboard remains a local application until its separate frontend deployment is completed.
+
 ## Screenshots / Demo
 
-The local demo exposes:
+The demo exposes:
 
-- Analytics dashboard: `http://localhost:3000`
-- Interactive API documentation: `http://localhost:8000/docs`
+- Local analytics dashboard: `http://localhost:3000`
+- Live API documentation: [https://predictive-maintenance-and-anomaly-chld.onrender.com/docs](https://predictive-maintenance-and-anomaly-chld.onrender.com/docs)
 
 After startup, review the fleet overview, open an individual asset to inspect its sensor history and risk explanation, then upload a valid CSV to rerun the analysis.
 
@@ -163,7 +176,7 @@ This repository includes modular Python services, typed API contracts, environme
 
 ## Production Roadmap
 
-- Add screenshots and a hosted demonstration
+- Deploy the Next.js dashboard and connect it to the live API
 - Train supervised failure and RUL models on labeled history
 - Track experiments and register models with MLflow
 - Deploy services on AWS with managed storage and monitoring
