@@ -2,6 +2,64 @@
 
 A full-stack industrial analytics application that converts equipment sensor readings into anomaly alerts, explainable failure-risk scores, health trends, and maintenance recommendations.
 
+## Product Walkthrough
+
+```mermaid
+flowchart LR
+    A["1. Upload sensor data"] --> B["2. Validate and engineer features"]
+    B --> C["3. Detect anomalies"]
+    C --> D["4. Calculate risk and RUL"]
+    D --> E["5. Prioritize maintenance"]
+    E --> F["6. Explain the alert"]
+```
+
+### Example asset assessment
+
+**Input signals**
+
+```text
+Asset: PUMP-014
+Temperature: elevated
+Vibration: elevated
+Pressure: outside normal range
+Operating hours: high
+```
+
+**Representative output**
+
+```json
+{
+  "asset_id": "PUMP-014",
+  "status": "critical",
+  "failure_risk": 87,
+  "health_score": 18,
+  "estimated_rul_hours": 36,
+  "maintenance_priority": "immediate",
+  "recommended_action": "Inspect bearings and alignment before the next cycle."
+}
+```
+
+The dashboard then shows fleet KPIs, priority assets, anomaly history, and the sensor conditions that contributed to each recommendation. This example illustrates the implemented assessment workflow; it is not a measured failure-prediction result.
+
+### API example
+
+```bash
+curl http://localhost:8000/api/overview
+curl http://localhost:8000/api/assets/PUMP-014
+```
+
+```json
+{
+  "total_assets": 24,
+  "healthy_assets": 16,
+  "attention_assets": 5,
+  "critical_assets": 3,
+  "anomalies_detected": 11,
+  "average_health_score": 76.4,
+  "priority_assets": ["highest-risk asset assessments"]
+}
+```
+
 ## The Problem
 
 Reactive maintenance can lead to unplanned downtime, while fixed schedules may service healthy equipment too early. Maintenance teams need a clear way to identify unusual operating conditions, prioritize assets, and understand why a machine has been flagged.
