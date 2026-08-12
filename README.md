@@ -6,7 +6,8 @@
 
 A full-stack industrial analytics application that converts equipment sensor readings into anomaly alerts, explainable failure-risk scores, health trends, and maintenance recommendations.
 
-**Live cloud API:** [Open service](https://predictive-maintenance-and-anomaly-chld.onrender.com) · [Interactive documentation](https://predictive-maintenance-and-anomaly-chld.onrender.com/docs) · [Health check](https://predictive-maintenance-and-anomaly-chld.onrender.com/health)
+**Live application:** [Open dashboard](https://predictive-maintenance-and-anomaly-detection-paramasiva.vercel.app)  
+**Live API:** [Service](https://predictive-maintenance-and-anomaly-chld.onrender.com) · [API documentation](https://predictive-maintenance-and-anomaly-chld.onrender.com/docs) · [Health check](https://predictive-maintenance-and-anomaly-chld.onrender.com/health)
 
 ## Product Walkthrough
 
@@ -115,18 +116,19 @@ The application produces a complete assessment for every asset: anomaly state, e
 
 The FastAPI analytics service is deployed as a Docker container on Render with automatic deployment from GitHub, dynamic port configuration, a public health endpoint, and interactive OpenAPI documentation.
 
-- **Service:** https://predictive-maintenance-and-anomaly-chld.onrender.com
+- **Frontend dashboard (Vercel):** https://predictive-maintenance-and-anomaly-detection-paramasiva.vercel.app
+- **Backend service (Render):** https://predictive-maintenance-and-anomaly-chld.onrender.com
 - **API documentation:** https://predictive-maintenance-and-anomaly-chld.onrender.com/docs
 - **Health check:** https://predictive-maintenance-and-anomaly-chld.onrender.com/health
 - **Fleet overview:** https://predictive-maintenance-and-anomaly-chld.onrender.com/api/overview
 
-The Next.js dashboard remains a local application until its separate frontend deployment is completed.
+The Next.js dashboard is deployed on Vercel and connects to the containerized FastAPI service on Render through an environment-configured API URL and restricted CORS policy.
 
 ## Screenshots / Demo
 
 The demo exposes:
 
-- Local analytics dashboard: `http://localhost:3000`
+- Live analytics dashboard: [https://predictive-maintenance-and-anomaly-detection-paramasiva.vercel.app](https://predictive-maintenance-and-anomaly-detection-paramasiva.vercel.app)
 - Live API documentation: [https://predictive-maintenance-and-anomaly-chld.onrender.com/docs](https://predictive-maintenance-and-anomaly-chld.onrender.com/docs)
 
 After startup, review the fleet overview, open an individual asset to inspect its sensor history and risk explanation, then upload a valid CSV to rerun the analysis.
@@ -176,7 +178,7 @@ This repository includes modular Python services, typed API contracts, environme
 
 ## Production Roadmap
 
-- Deploy the Next.js dashboard and connect it to the live API
+- Add centralized application metrics and uptime monitoring
 - Train supervised failure and RUL models on labeled history
 - Track experiments and register models with MLflow
 - Deploy services on AWS with managed storage and monitoring
