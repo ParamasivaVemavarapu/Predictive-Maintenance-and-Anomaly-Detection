@@ -185,6 +185,16 @@ This repository includes modular Python services, typed API contracts, environme
 - Backtest precision, recall, alert lead time, and avoided downtime
 - Add streaming ingestion, drift monitoring, CMMS integration, RBAC, and audit logs
 
+## Reproducible Evaluation
+
+The versioned [evaluation suite](evaluation/README.md) calculates alert precision, recall, mean alert lead time, and per-feature Population Stability Index drift signals.
+
+```bash
+python evaluation/evaluate.py
+```
+
+The included backtest data is synthetic and validates evaluation behavior. Field performance requires time-split equipment history with verified maintenance outcomes.
+
 ## License
 
 MIT
